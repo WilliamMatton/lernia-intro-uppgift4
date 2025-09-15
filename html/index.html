@@ -8,7 +8,22 @@
     <link rel='stylesheet' type='text/css' media='screen' href='../css/main.css'>
 </head>
 <body>
-    
+    <header>
+        <h1>Todo-list Application</h1>
+    </header>
+    <section id="inputSection">
+        <label for="textInput">Enter a task: </label>
+        <input type="text" id="textInput" placeholder="Todo-item...">
+        <button type="button" id="submitButton">Add Item</button>
+    </section>
+    <section id="listSection">
+        <label id="completedItemsAmount">Completed todo-list items: 0</label>
+        <ul id="itemList">
+            <li><p>Todo-list items</p></li>
+            <li><p>will be</p></li>
+            <li><p>added here.</p></li>
+        </ul>
+    </section>
     <script src='../js/main.js'></script>
 </body>
 </html>
