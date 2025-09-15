@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+}
+
+header {
+    background-color: darkseagreen;
+    padding: 10px;
+    text-align: center;
+    font-size: 35px;
+}
+
+#inputSection {
+    background-color: rgb(143, 143, 143);
+    padding: 20px;
+    text-align: center;
+}
+
+#listSection {
+    background-color: rgb(204, 204, 204);
+    padding: 20px;
+}
