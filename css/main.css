@@ -19,3 +19,21 @@ header {
     background-color: rgb(204, 204, 204);
     padding: 20px;
 }
+
+.completed {
+    color: green;
+}
+
+.waiting button, .completed button {
+    float: left;
+    margin-right: 10px;
+}
+
+.waiting p, .completed p {
+    margin-top: 3px;
+    margin-bottom: 0;
+}
+
+li {
+    padding-bottom: 10px;
+}
