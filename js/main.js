@@ -32,8 +32,9 @@ function SubmitTodoItem() {
     };
     listItems.push(item);
 
-    const deleteButton = document.createElement('button');
-    deleteButton.innerHTML = "Delete";
+    const deleteButton = document.createElement('i');
+    deleteButton.innerHTML = 'delete';
+    deleteButton.className = 'material-icons';
     deleteButton.addEventListener('click', function() {
         DeleteTodoItem(item, deleteButton);
     });
