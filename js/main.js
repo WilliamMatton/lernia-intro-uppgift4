@@ -43,7 +43,7 @@ function SubmitTodoItem() {
     textElement.textContent = listItems.at(listItems.length - 1).task;
     entry.appendChild(textElement);
     textElement.addEventListener('click', function() {
-        CompleteTodoItem(textElement.textContent);
+        CompleteTodoItem(item);
     });
 
     itemList.appendChild(entry);
@@ -51,14 +51,7 @@ function SubmitTodoItem() {
     textInput.value = '';
 }
 
-function CompleteTodoItem(taskName) {
-    let task;
-    for(i = 0; i < listItems.length; i++) {
-        if(listItems[i].task == taskName) {
-            task = listItems[i];
-            break;
-        }
-    }
+function CompleteTodoItem(task) {
     task.updateStatus();
 }
 
