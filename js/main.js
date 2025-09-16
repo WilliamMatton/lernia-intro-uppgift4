@@ -2,7 +2,7 @@ const textInput = document.querySelector('#textInput');
 const submitButton = document.querySelector('#submitButton');
 const itemList = document.querySelector('#itemList');
 const completedItemsLabel = document.querySelector('#completedItemsLabel');
-const listItems = [];
+let listItems = [];
 
 let completedItemsCount = 0;
 
@@ -27,11 +27,18 @@ function SubmitTodoItem() {
             this.element.className == 'waiting' ? this.element.className = 'completed' : this.element.className = 'waiting';
             
             this.completed ? completedItemsCount++ : completedItemsCount--;
-            completedItemsLabel.innerHTML = completedItemsLabel.textContent.substring(0, 27) + completedItemsCount;
+            UpdateTaskCounter();
         }
     };
     listItems.push(item);
-    
+
+    const deleteButton = document.createElement('button');
+    deleteButton.innerHTML = "Delete";
+    deleteButton.addEventListener('click', function() {
+        DeleteTodoItem(item);
+    });
+    entry.appendChild(deleteButton);
+
     const textElement = document.createElement('p');
     textElement.textContent = listItems.at(listItems.length - 1).task;
     entry.appendChild(textElement);
@@ -53,4 +60,32 @@ function CompleteTodoItem(taskName) {
         }
     }
     task.updateStatus();
+}
+
+function DeleteTodoItem(item) {
+    if(item.completed) {
+        completedItemsCount--;
+        UpdateTaskCounter();
+    }
+    item.element.remove();
+    
+    let index;
+    for(i = 0; i < listItems.length; i++) {
+        if(listItems[i] == item) {
+            index = i;
+            break;
+        }
+    }
+
+    const newArray = [];
+    for(i = 0; i < listItems.length; i++) {
+        if(i == index)
+            continue;
+        newArray.push(listItems[i]);
+    }
+    listItems = newArray;
+}
+
+function UpdateTaskCounter() {
+    completedItemsLabel.innerHTML = completedItemsLabel.textContent.substring(0, 27) + completedItemsCount;
 }
