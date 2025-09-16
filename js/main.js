@@ -35,14 +35,12 @@ function SubmitTodoItem() {
     const deleteButton = document.createElement('button');
     deleteButton.innerHTML = "Delete";
     deleteButton.addEventListener('click', function() {
-        DeleteTodoItem(item);
+        DeleteTodoItem(item, deleteButton);
     });
-    entry.appendChild(deleteButton);
+    itemList.appendChild(deleteButton);
 
-    const textElement = document.createElement('p');
-    textElement.textContent = listItems.at(listItems.length - 1).task;
-    entry.appendChild(textElement);
-    textElement.addEventListener('click', function() {
+    entry.appendChild(document.createTextNode(listItems.at(listItems.length - 1).task));
+    entry.addEventListener('click', function() {
         CompleteTodoItem(item);
     });
 
@@ -55,12 +53,13 @@ function CompleteTodoItem(task) {
     task.updateStatus();
 }
 
-function DeleteTodoItem(item) {
+function DeleteTodoItem(item, deleteButton) {
     if(item.completed) {
         completedItemsCount--;
         UpdateTaskCounter();
     }
     item.element.remove();
+    deleteButton.remove();
     
     let index;
     for(i = 0; i < listItems.length; i++) {
