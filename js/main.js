@@ -1,5 +1,6 @@
 const textInput = document.querySelector('#textInput');
 const submitButton = document.querySelector('#submitButton');
+const alertText = document.querySelector('#alertText');
 const itemList = document.querySelector('#itemList');
 const completedItemsLabel = document.querySelector('#completedItemsLabel');
 let listItems = [];
@@ -9,9 +10,10 @@ let completedItemsCount = 0;
 submitButton.addEventListener('click', SubmitTodoItem);
 
 function SubmitTodoItem() {
+    alertText.textContent = "";
     const task = textInput.value.trim();
     if(task.length == 0) {
-        alert("The input field can't be empty, you need to write something to add to the list.");
+        alertText.textContent = "The input field can't be empty, you need to write something you want to add to the list.";
         return;
     }
 
