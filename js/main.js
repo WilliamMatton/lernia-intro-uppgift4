@@ -9,7 +9,7 @@ let completedItemsCount = 0;
 submitButton.addEventListener('click', SubmitTodoItem);
 
 function SubmitTodoItem() {
-    const task = textInput.value;
+    const task = textInput.value.trim();
     if(task.length == 0) {
         alert("The input field can't be empty, you need to write something to add to the list.");
         return;
@@ -41,7 +41,7 @@ function SubmitTodoItem() {
     });
     itemList.appendChild(deleteButton);
 
-    entry.appendChild(document.createTextNode(listItems.at(listItems.length - 1).task));
+    entry.appendChild(document.createTextNode(item.task));
     entry.addEventListener('click', function() {
         CompleteTodoItem(item);
     });
