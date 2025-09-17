@@ -1,8 +1,0 @@
-HTML Layout elements: https://www.w3schools.com/html/html_layout.asp
-HTML Layout tryit: https://www.w3schools.com/html/tryit.asp?filename=tryhtml_layout_float
-HTML DOM Input Text Object: https://www.w3schools.com/jsref/dom_obj_text.asp
-JavaScript Objects: https://www.w3schools.com/js/js_objects.asp
-JavaScript Arrays: https://www.w3schools.com/js/js_arrays.asp
-Add item to HTML List: https://stackoverflow.com/questions/17773938/add-a-list-item-through-javascript
-
-//completedItemsLabel.innerHTML = completedItemsLabel.textContent.substring(0, 27) + completedItemsCount;
