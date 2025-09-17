@@ -22,7 +22,6 @@ function SubmitTodoItem() {
     const taskTextElement = document.createElement('span');
 
     const item = {
-        element: entry,
         textElement: taskTextElement,
         completed: false,
         updateStatus: function() {
@@ -38,7 +37,7 @@ function SubmitTodoItem() {
     deleteButton.innerHTML = 'delete';
     deleteButton.classList.add('material-icons');
     deleteButton.addEventListener('click', function() {
-        DeleteTodoItem(item, deleteButton);
+        DeleteTodoItem(item, entry, deleteButton);
     });
     entry.appendChild(deleteButton);
     
@@ -57,13 +56,14 @@ function CompleteTodoItem(task) {
     task.updateStatus();
 }
 
-function DeleteTodoItem(item, deleteButton) {
+function DeleteTodoItem(item, entry, deleteButton) {
+    entry.remove();
+    deleteButton.remove();
+    
     if(item.completed) {
         completedItemsCount--;
         UpdateTaskCounter();
     }
-    item.element.remove();
-    deleteButton.remove();
     
     let index;
     for(i = 0; i < listItems.length; i++) {

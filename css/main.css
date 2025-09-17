@@ -1,4 +1,16 @@
 .completed {
     text-decoration: line-through;
-    color: #888;
+    color: #8b8b8b;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+li i {
+    margin-right: 10px;
+}
+
+i, li span {
+    cursor: pointer;
 }
