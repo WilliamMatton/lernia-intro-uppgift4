@@ -35,16 +35,18 @@ function SubmitTodoItem() {
 
     const deleteButton = document.createElement('i');
     deleteButton.innerHTML = 'delete';
-    deleteButton.className = 'material-icons';
+    deleteButton.classList.add('material-icons');
     deleteButton.addEventListener('click', function() {
         DeleteTodoItem(item, deleteButton);
     });
-    itemList.appendChild(deleteButton);
+    entry.appendChild(deleteButton);
 
-    entry.appendChild(document.createTextNode(item.task));
-    entry.addEventListener('click', function() {
+    const taskTextElement = document.createElement('span');
+    taskTextElement.textContent = item.task;
+    taskTextElement.addEventListener('click', function() {
         CompleteTodoItem(item);
     });
+    entry.appendChild(taskTextElement);
 
     itemList.appendChild(entry);
 
