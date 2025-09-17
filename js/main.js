@@ -16,33 +16,31 @@ function SubmitTodoItem() {
     }
 
     const entry = document.createElement('li');
-    entry.classList.add('waiting');
+    const deleteButton = document.createElement('i');
+    const taskTextElement = document.createElement('span');
 
     const item = {
-        task: textInput.value,
         element: entry,
+        textElement: taskTextElement,
         completed: false,
         updateStatus: function() {
             this.completed = !this.completed;
-            this.element.classList.toggle('completed');
-            this.element.classList.toggle('waiting');
+            this.textElement.classList.toggle('completed');
             
             this.completed ? completedItemsCount++ : completedItemsCount--;
             UpdateTaskCounter();
         }
     };
     listItems.push(item);
-
-    const deleteButton = document.createElement('i');
+    
     deleteButton.innerHTML = 'delete';
     deleteButton.classList.add('material-icons');
     deleteButton.addEventListener('click', function() {
         DeleteTodoItem(item, deleteButton);
     });
     entry.appendChild(deleteButton);
-
-    const taskTextElement = document.createElement('span');
-    taskTextElement.textContent = item.task;
+    
+    taskTextElement.textContent = task;
     taskTextElement.addEventListener('click', function() {
         CompleteTodoItem(item);
     });
