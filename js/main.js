@@ -71,14 +71,7 @@ function DeleteTodoItem(item, entry, deleteButton) {
             break;
         }
     }
-
-    const newArray = [];
-    for(i = 0; i < listItems.length; i++) {
-        if(i == index)
-            continue;
-        newArray.push(listItems[i]);
-    }
-    listItems = newArray;
+    listItems.splice(index, 1);
 }
 
 function UpdateTaskCounter() {
