@@ -16,7 +16,7 @@ function SubmitTodoItem() {
     }
 
     const entry = document.createElement('li');
-    entry.className = 'waiting';
+    entry.classList.add('waiting');
 
     const item = {
         task: textInput.value,
@@ -24,7 +24,8 @@ function SubmitTodoItem() {
         completed: false,
         updateStatus: function() {
             this.completed = !this.completed;
-            this.element.className == 'waiting' ? this.element.className = 'completed' : this.element.className = 'waiting';
+            this.element.classList.toggle('completed');
+            this.element.classList.toggle('waiting');
             
             this.completed ? completedItemsCount++ : completedItemsCount--;
             UpdateTaskCounter();
