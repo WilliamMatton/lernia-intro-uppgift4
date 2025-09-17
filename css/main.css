@@ -1,4 +1,12 @@
 .completed {
     text-decoration: line-through;
-    color: #888;
+    color: #8b8b8b;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+li span {
+    cursor: pointer;
 }

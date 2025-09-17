@@ -18,11 +18,10 @@ function SubmitTodoItem() {
     }
 
     const entry = document.createElement('li');
-    const deleteButton = document.createElement('i');
+    const deleteButton = document.createElement('span');
     const taskTextElement = document.createElement('span');
 
     const item = {
-        element: entry,
         textElement: taskTextElement,
         completed: false,
         updateStatus: function() {
@@ -35,10 +34,9 @@ function SubmitTodoItem() {
     };
     listItems.push(item);
     
-    deleteButton.innerHTML = 'delete';
-    deleteButton.classList.add('material-icons');
+    deleteButton.innerHTML = '&#x1F5D1';
     deleteButton.addEventListener('click', function() {
-        DeleteTodoItem(item, deleteButton);
+        DeleteTodoItem(item, entry, deleteButton);
     });
     entry.appendChild(deleteButton);
     
@@ -57,13 +55,14 @@ function CompleteTodoItem(task) {
     task.updateStatus();
 }
 
-function DeleteTodoItem(item, deleteButton) {
+function DeleteTodoItem(item, entry, deleteButton) {
+    entry.remove();
+    deleteButton.remove();
+    
     if(item.completed) {
         completedItemsCount--;
         UpdateTaskCounter();
     }
-    item.element.remove();
-    deleteButton.remove();
     
     let index;
     for(i = 0; i < listItems.length; i++) {
