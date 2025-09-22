@@ -10,3 +10,8 @@ li {
 li span {
     cursor: pointer;
 }
+
+.deleteButton {
+    font-size: 20px;
+    margin-left: 10px;
+}

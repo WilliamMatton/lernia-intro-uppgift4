@@ -43,6 +43,7 @@ function SubmitTodoItem() {
     entry.appendChild(taskTextElement);
 
     // Delete button
+    deleteButton.classList.add("deleteButton");
     deleteButton.innerHTML = "&#x1F5D1";
     deleteButton.addEventListener("click", function() {
         DeleteTodoItem(item, entry);
