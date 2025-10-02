@@ -8,19 +8,25 @@
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
 </head>
 <body>
-    <header>
-        <h1>Todo-list Application</h1>
-    </header>
-    <section>
-        <label for="textInput">Enter a task: </label>
-        <input type="text" id="textInput" placeholder="Todo-item...">
-        <button type="button" id="submitButton">Add Item</button>
-        <div>
-            <small id="alertText"></small>
-        </div>
-        <p id="completedItemsLabel">Completed todo-list items: 0</p>
+    <nav>
+        <button type="button" id="retroButton">Retro Style</button>
+        <button type="button" id="modernButton">Modern Style</button>
+    </nav>
+    <section id="bodySection">
+        <header>
+            <h1>Todo-Application</h1>
+        </header>
+        <section id="contentSection">
+            <label for="textInput">Enter a task: </label>
+            <input type="text" id="textInput" placeholder="Todo-item...">
+            <button type="button" id="submitButton">Add Item</button>
+            <div>
+                <small id="alertText"></small>
+            </div>
+            <p id="completedItemsLabel">Completed todo-list items: 0</p>
+        </section>
+        <ul id="itemList"></ul>
     </section>
-    <ul id="itemList"></ul>
     <script src='main.js'></script>
 </body>
 </html>

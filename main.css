@@ -3,15 +3,21 @@ body {
     background-color: #C4D1BB;
 }
 
-header {
-    background-color: #627062;
+nav {
     padding: 10px;
-    text-align: center;
-    font-size: 35px;
+    background-color: #627062;
+}
+
+#bodySection {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-section {
+header h1 {
+    text-align: center;
+    font-size: 50px;
+}
+
+#contentSection {
     text-align: center;
     padding: 20px;
     font-size: 25px;
@@ -51,5 +57,4 @@ li span {
 
 .deleteButton {
     font-size: 20px;
-    margin-left: 10px;
 }

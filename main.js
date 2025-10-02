@@ -3,9 +3,24 @@ const submitButton = document.querySelector("#submitButton");
 const alertText = document.querySelector("#alertText");
 const itemList = document.querySelector("#itemList");
 const completedItemsLabel = document.querySelector("#completedItemsLabel");
+
+const retroButton = document.querySelector("#retroButton");
+const modernButton = document.querySelector("#modernButton");
+const styleSheet = document.querySelector("link");
+
 let listItems = [];
 
+let itemsCount = listItems.length;
 let completedItemsCount = 0;
+let remainingItemsCount = itemsCount - completedItemsCount;
+
+retroButton.addEventListener("click", function() {
+    styleSheet.href = "main.css";
+});
+
+modernButton.addEventListener("click", function() {
+    styleSheet.href = "main2.css";
+});
 
 submitButton.addEventListener("click", SubmitTodoItem);
 
