@@ -1,6 +1,10 @@
+html {
+    height: 100%;
+}
+
 body {
     margin: 0;
-    background: linear-gradient(white, rgb(209, 117, 134));
+    background: linear-gradient(rgb(243, 188, 188), rgb(201, 97, 97));
     display: flex;
     justify-content: center;
 }
