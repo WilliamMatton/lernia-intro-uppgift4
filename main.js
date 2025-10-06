@@ -25,6 +25,7 @@ function SubmitTodoItem() {
     if(task.length == 0) {
         alertText.textContent = "Input must not be empty";
         alertText.classList.add("animateAlert");
+        textInput.value = "";
         return;
     }
 
