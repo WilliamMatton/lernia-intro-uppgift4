@@ -112,6 +112,19 @@ li {
     text-align: center;
     padding: 3px;
     background-color: white;
+    animation-name: slide;
+    animation-fill-mode: both;
+    animation-duration: 0.3s;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 .itemText {
