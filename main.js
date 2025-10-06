@@ -8,6 +8,14 @@ let listItems = [];
 
 let completedItemsCount = 0;
 
+window.addEventListener("load", () => {
+    document.querySelector("#bodySection").classList.add("animateTodoWindow");
+    document.querySelector("h1").classList.add("animateFadeIn");
+    completedItemsLabel.classList.add("animateFadeIn");
+    textInput.classList.add("animateFadeIn");
+    submitButton.classList.add("animateFadeIn");
+});
+
 submitButton.addEventListener("click", SubmitTodoItem);
 
 function SubmitTodoItem() {
@@ -39,7 +47,7 @@ function SubmitTodoItem() {
     
     // Todo text
     taskTextElement.textContent = task;
-    taskTextElement.addEventListener("click", function() {
+    taskTextElement.addEventListener("click", () => {
         UpdateTodoItem(item);
     });
     entry.appendChild(taskTextElement);
@@ -47,7 +55,7 @@ function SubmitTodoItem() {
     // Delete button
     deleteButton.classList.add("deleteButton");
     deleteButton.innerHTML = "&#x1F5D1";
-    deleteButton.addEventListener("click", function() {
+    deleteButton.addEventListener("click", () => {
         DeleteTodoItem(item, entry);
     });
     entry.appendChild(deleteButton);
