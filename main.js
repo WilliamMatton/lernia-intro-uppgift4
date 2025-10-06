@@ -20,9 +20,11 @@ submitButton.addEventListener("click", SubmitTodoItem);
 
 function SubmitTodoItem() {
     alertText.textContent = "";
+    alertText.classList.remove("animateAlert");
     const task = textInput.value.trim();
     if(task.length == 0) {
         alertText.textContent = "Input must not be empty";
+        alertText.classList.add("animateAlert");
         return;
     }
 

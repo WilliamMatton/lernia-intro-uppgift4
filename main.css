@@ -77,10 +77,28 @@ h1 {
 }
 
 #alertText {
-    color: red;
     font-family: sans-serif;
     font-style: italic;
     font-size: 12px;
+}
+
+.animateAlert {
+    animation-name: flicker;
+    animation-fill-mode: both;
+    animation-duration: 0.2s;
+    animation-iteration-count: 5;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes flicker {
+    0% {
+        color: white;
+    }
+
+    100% {
+        color: red;
+    }
 }
 
 ul {
