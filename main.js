@@ -4,23 +4,9 @@ const alertText = document.querySelector("#alertText");
 const itemList = document.querySelector("#itemList");
 const completedItemsLabel = document.querySelector("#completedItemsLabel");
 
-const retroButton = document.querySelector("#retroButton");
-const modernButton = document.querySelector("#modernButton");
-const styleSheet = document.querySelector("link");
-
 let listItems = [];
 
-let itemsCount = listItems.length;
 let completedItemsCount = 0;
-let remainingItemsCount = itemsCount - completedItemsCount;
-
-retroButton.addEventListener("click", function() {
-    styleSheet.href = "main.css";
-});
-
-modernButton.addEventListener("click", function() {
-    styleSheet.href = "main2.css";
-});
 
 submitButton.addEventListener("click", SubmitTodoItem);
 
@@ -28,7 +14,7 @@ function SubmitTodoItem() {
     alertText.textContent = "";
     const task = textInput.value.trim();
     if(task.length == 0) {
-        alertText.textContent = "The input field can't be empty, you need to write something you want to add to the list.";
+        alertText.textContent = "Input must not be empty";
         return;
     }
 
@@ -45,7 +31,7 @@ function SubmitTodoItem() {
             this.textElement.classList.toggle("completed");
             
             this.completed ? completedItemsCount++ : completedItemsCount--;
-            UpdateTaskCounter();
+            UpdateTaskCounterLabel();
         }
     };
     listItems.push(item);
@@ -68,6 +54,7 @@ function SubmitTodoItem() {
     itemList.appendChild(entry);
 
     textInput.value = "";
+    UpdateTaskCounterLabel();
 }
 
 function UpdateTodoItem(item) {
@@ -77,7 +64,6 @@ function UpdateTodoItem(item) {
 function DeleteTodoItem(item, entry) {
     if(item.completed) {
         completedItemsCount--;
-        UpdateTaskCounter();
     }
     
     let text = entry.firstChild.textContent;
@@ -85,8 +71,10 @@ function DeleteTodoItem(item, entry) {
 
     entry.remove();
     listItems.splice(index, 1);
+
+    UpdateTaskCounterLabel();
 }
 
-function UpdateTaskCounter() {
-    completedItemsLabel.innerHTML = completedItemsLabel.textContent.substring(0, 27) + completedItemsCount;
+function UpdateTaskCounterLabel() {
+    completedItemsLabel.innerHTML = completedItemsCount + " completed";
 }

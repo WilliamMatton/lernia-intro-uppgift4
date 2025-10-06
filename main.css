@@ -1,53 +1,45 @@
 body {
     margin: 0;
-    background-color: #C4D1BB;
-}
-
-nav {
-    padding: 10px;
-    background-color: #627062;
+    background: linear-gradient(white, rgb(209, 117, 134));
+    display: flex;
+    justify-content: center;
 }
 
 #bodySection {
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-header h1 {
     text-align: center;
-    font-size: 50px;
+    width: 350px;
+    height: 120px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    background-color: white;
 }
 
-#contentSection {
-    text-align: center;
-    padding: 20px;
-    font-size: 25px;
+h1 {
+    font-size: 35px;
+    padding-top: 10px;
+    margin: 0;
 }
 
-input, button {
-    padding: 5px;
-    font-size: 25px;
+p#completedItemsLabel {
+    font-size: 10px;
+    font-family: sans-serif;
 }
 
 ul {
     list-style: none;
-    padding-left: 0px;
-    margin: 10px;
+    padding-left: 0;
 }
 
 li {
-    border: 1px solid;
-    border-radius: 10px;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: #DCDDBE;
+    font-family: sans-serif;
+    text-align: center;
+    padding: 3px;
+    background-color: white;
 }
 
 li span {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     cursor: pointer;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .completed {
@@ -57,4 +49,5 @@ li span {
 
 .deleteButton {
     font-size: 20px;
+    padding-left: 10px;
 }
