@@ -53,12 +53,21 @@ li span {
     font-size: 20px;
 }
 
+.itemText:hover {
+    text-decoration: line-through;
+}
+
 .completed {
     text-decoration: line-through;
     color: #8b8b8b;
 }
 
 .deleteButton {
+    color: rgba(0, 0, 0, 0.65);
     font-size: 20px;
     padding-left: 10px;
+}
+
+.deleteButton:hover {
+    color: rgba(0, 0, 0, 1);
 }

@@ -21,6 +21,7 @@ function SubmitTodoItem() {
     const entry = document.createElement("li");
     const deleteButton = document.createElement("span");
     const taskTextElement = document.createElement("span");
+    taskTextElement.classList.add("itemText");
 
     const item = {
         textElement: taskTextElement,
