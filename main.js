@@ -9,7 +9,7 @@ let listItems = [];
 let completedItemsCount = 0;
 
 window.addEventListener("load", () => {
-    document.querySelector("#bodySection").classList.add("animateTodoWindow");
+    document.querySelector("#todoWindow").classList.add("animateTodoWindow");
     document.querySelector("h1").classList.add("animateFadeIn");
     completedItemsLabel.classList.add("animateFadeIn");
     textInput.classList.add("animateFadeIn");

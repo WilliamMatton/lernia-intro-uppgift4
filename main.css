@@ -1,15 +1,12 @@
-html {
-    min-height: 100vh;
-}
-
 body {
     margin: 0;
     background: linear-gradient(rgb(243, 188, 188), rgb(201, 97, 97));
     display: flex;
     justify-content: center;
+    min-height: 100vh;
 }
 
-#bodySection {
+#todoWindow {
     text-align: center;
     width: 30%;
     margin-top: 10px;
@@ -61,6 +58,10 @@ h1 {
     margin-bottom: 10px;
     opacity: 0;
     animation-delay: 1.2s;
+}
+
+#textInput {
+    max-inline-size: 50%;
 }
 
 .animateFadeIn {
